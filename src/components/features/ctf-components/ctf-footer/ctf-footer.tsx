@@ -1,3 +1,4 @@
+import { ContentfulLivePreview } from '@contentful/live-preview';
 import Facebook from '@mui/icons-material/Facebook';
 import Instagram from '@mui/icons-material/Instagram';
 import LinkedIn from '@mui/icons-material/LinkedIn';
@@ -14,6 +15,7 @@ import {
 } from '@src/components/features/ctf-components/ctf-navigation/utils';
 import { LanguageSelector } from '@src/components/features/language-selector';
 import { Link } from '@src/components/shared/link';
+import { useContentfulContext } from '@src/contentful-context';
 import Logo from '@src/icons/logo-tagline.svg';
 import { CONTAINER_WIDTH } from '@src/theme';
 
@@ -223,6 +225,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   const footerContent = props.items[0];
 
   const { t } = useTranslation();
+  const { locale } = useContentfulContext();
 
   const renderMenuGroupLinks = (menuGroup, listClassName) => {
     return menuGroup?.items?.map((menuItem, i) => {
@@ -249,7 +252,12 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
               {footerContent.menuItemsCollection.items.map((menuItem, i) => (
                 <div key={i} className={classes.menuColumn}>
                   <ul className={classes.menu}>
-                    <li>
+                    <li
+                      {...ContentfulLivePreview.getProps({
+                        entryId: footerContent.sys.id,
+                        fieldId: menuItem?.groupName,
+                        locale,
+                      })}>
                       <p className={classes.menuItem}>{menuItem?.groupName}</p>
                       {menuItem?.featuredPagesCollection && (
                         <ul className={classes.submenu}>
