@@ -1141,10 +1141,12 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@contentful/live-preview@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@contentful/live-preview/-/live-preview-1.2.0.tgz#d2e04e02a16a18ca2f43f9dbc3a4f2793b445fc7"
-  integrity sha512-7YeeOxJStaN/S+Q5GlvufejCvuCA3qQguJIerW4CKzH0Q3m+eQMAv72/Z9nPN4P3zBrGnFsj63Wqwjh4jfYsAw==
+"@contentful/live-preview@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@contentful/live-preview/-/live-preview-1.3.0.tgz#032039ec072cdf412cd2d473aa74960e7e4f0e4c"
+  integrity sha512-BriwBBD1DktGnbTcnwTN26Lr8XNeFP83kJqAliQDI/+TQW+mbFcEzPGj8OY2muMfeDVSXGE0NCLCGIfNy039Ag==
+  dependencies:
+    use-deep-compare-effect "^1.8.1"
 
 "@contentful/rich-text-react-renderer@^15.12.1":
   version "15.12.1"
@@ -3860,6 +3862,11 @@ dependency-graph@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/dependency-graph/-/dependency-graph-0.11.0.tgz#ac0ce7ed68a54da22165a85e97a01d53f5eb2e27"
   integrity sha512-JeMq7fEshyepOWDfcfHK06N3MhyPhz++vtqWhMT5O9A3K42rdsEDpfdVqjaqaAhsw6a+ZqeDvQVtD0hFHQWrzg==
+
+dequal@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"
+  integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
 
 detect-indent@^6.0.0:
   version "6.1.0"
@@ -7841,6 +7848,14 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-deep-compare-effect@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/use-deep-compare-effect/-/use-deep-compare-effect-1.8.1.tgz#ef0ce3b3271edb801da1ec23bf0754ef4189d0c6"
+  integrity sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    dequal "^2.0.2"
 
 use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
