@@ -20,7 +20,7 @@ export const CtfHeroGql = (props: CtfHeroGqlPropsInterface) => {
 
   const componentHeroBanner = useContentfulLiveUpdates(data?.componentHeroBanner, locale);
 
-  if (!data?.componentHeroBanner || isLoading) return null;
+  if (!componentHeroBanner || isLoading) return null;
 
   return <CtfHeroBanner {...componentHeroBanner} />;
 };
