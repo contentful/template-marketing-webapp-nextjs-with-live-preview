@@ -1,4 +1,4 @@
-import { useContentfulLiveUpdates } from "@contentful/live-preview/dist/react"
+import { useContentfulLiveUpdates } from '@contentful/live-preview/dist/react';
 import { Container } from '@mui/material';
 import Head from 'next/head';
 
@@ -21,6 +21,7 @@ export const CtfBusinessInfoGql = ({ preview, id }: CtfBusinessInfoGqlPropsInter
     id,
     preview,
   });
+
   const topicBusinessInfo = useContentfulLiveUpdates(data?.topicBusinessInfo, locale);
 
   if (!data || isLoading) {
@@ -42,7 +43,7 @@ export const CtfBusinessInfoGql = ({ preview, id }: CtfBusinessInfoGqlPropsInter
           <meta
             key="og:image"
             property="og:image"
-            content={`${data.topicBusinessInfo.featuredImage.url}?w=1200&h=630&f=faces&fit=fill`}
+            content={`${topicBusinessInfo.featuredImage?.url}?w=1200&h=630&f=faces&fit=fill`}
           />
         </Head>
       )}
