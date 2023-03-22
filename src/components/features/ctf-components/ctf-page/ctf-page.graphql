@@ -1,4 +1,8 @@
 fragment CtfPageFields on Page {
+  __typename
+  sys {
+    id
+  }
   pageName
   internalName: pageName
   slug
@@ -23,10 +27,6 @@ fragment CtfPageFields on Page {
     items {
       ...ComponentReferenceFields
     }
-  }
-  __typename
-  sys {
-    id
   }
 }
 

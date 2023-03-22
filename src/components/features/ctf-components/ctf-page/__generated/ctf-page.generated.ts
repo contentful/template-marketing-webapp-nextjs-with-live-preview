@@ -26,7 +26,7 @@ function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
     return json.data;
   }
 }
-export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null, image?: (
+export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null, image?: (
       { __typename?: 'Asset' }
       & AssetFieldsFragment
     ) | null } | null, topSectionCollection?: { __typename?: 'PageTopSectionCollection', items: Array<(
@@ -74,7 +74,7 @@ export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | nu
     ) | (
       { __typename?: 'ComponentTextBlock' }
       & ComponentReferenceFields_ComponentTextBlock_Fragment
-    ) | null> } | null, sys: { __typename?: 'Sys', id: string } };
+    ) | null> } | null };
 
 export type CtfPageQueryVariables = Types.Exact<{
   slug: Types.Scalars['String'];
@@ -90,6 +90,10 @@ export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename
 
 export const CtfPageFieldsFragmentDoc = `
     fragment CtfPageFields on Page {
+  __typename
+  sys {
+    id
+  }
   pageName
   internalName: pageName
   slug
@@ -114,10 +118,6 @@ export const CtfPageFieldsFragmentDoc = `
     items {
       ...ComponentReferenceFields
     }
-  }
-  __typename
-  sys {
-    id
   }
 }
     `;
