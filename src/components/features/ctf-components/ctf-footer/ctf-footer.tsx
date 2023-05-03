@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     marginLeft: 'auto',
     marginRight: 'auto',
+    flexWrap: 'wrap',
     maxWidth: `${CONTAINER_WIDTH / 10}rem`,
     paddingBottom: theme.spacing(5),
     paddingTop: theme.spacing(8),
